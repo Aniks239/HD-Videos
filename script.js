@@ -10,7 +10,17 @@ posts.forEach(post=>{
 
 const title = post.title.$t;
 
-const link = post.link.find(x=>x.rel==="alternate").href;
+// Post ke andar ka HTML
+const content = post.content.$t;
+
+// Telegram ya koi bhi pehla link nikaalo
+let link = "#";
+
+const match = content.match(/href="([^"]+)"/);
+
+if (match) {
+    link = match[1];
+}
 
 const image = post.media$thumbnail
 ? post.media$thumbnail.url.replace("s72-c","s500")
