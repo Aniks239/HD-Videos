@@ -1,9 +1,9 @@
 body{
-background:#111;
+background:#0f0f0f;
 color:white;
-font-family:Arial;
+font-family:Arial,sans-serif;
 margin:0;
-padding:20px;
+padding:15px;
 }
 
 h1{
@@ -11,8 +11,32 @@ text-align:center;
 }
 
 .card{
-background:#222;
-padding:15px;
-margin-bottom:15px;
+background:#1b1b1b;
+border-radius:15px;
+overflow:hidden;
+margin-bottom:20px;
+box-shadow:0 0 10px rgba(0,0,0,.3);
+}
+
+.card img{
+width:100%;
+display:block;
+}
+
+.card h2{
+padding:10px;
+font-size:18px;
+}
+
+button{
+width:90%;
+margin:10px 5%;
+padding:12px;
+border:none;
 border-radius:10px;
+background:#00c853;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
 }
