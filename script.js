@@ -16,7 +16,13 @@ const content = post.content.$t;
 // Telegram ya koi bhi pehla link nikaalo
 let link = "#";
 
-const match = content.match(/href="([^"]+)"/);
+let link = "#";
+
+const match = content.match(/https:\/\/t\.me\/[^\s"'<>]+/);
+
+if (match) {
+    link = match[0];
+}
 
 if (match) {
     link = match[1];
