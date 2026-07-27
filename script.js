@@ -1,4 +1,4 @@
-const feed = "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://teraasave.blogspot.com/feeds/posts/default?alt=json&max-results=20");
+const feed = "https://teraasave.blogspot.com/feeds/posts/default?alt=json-in-script&callback=?";
 
 fetch(feed)
 .then(response => response.json())
