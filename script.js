@@ -10,15 +10,15 @@ posts.forEach(post=>{
 
 const title = post.title.$t;
 
-    // Post ke andar ka HTML
 const content = post.content.$t;
 
+// Sirf Telegram link nikalo
 let link = "#";
 
-const match = content.match(/https:\/\/t\.me\/[^\s"'<>]+/);
+const telegramLink = content.match(/https:\/\/t\.me\/[^"]+/);
 
-if (match) {
-    link = match[0];
+if (telegramLink) {
+    link = telegramLink[0];
 }
 
 const image = post.media$thumbnail
@@ -29,7 +29,7 @@ html += `
 <div class="card">
 <img src="${image}">
 <h2>${title}</h2>
-<a href="${link}">
+<a href="${link}" target="_blank" rel="noopener">
 <button>Watch Now</button>
 </a>
 </div>
