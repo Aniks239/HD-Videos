@@ -15,10 +15,18 @@ const content = post.content.$t;
 // Sirf Telegram link nikalo
 let link = "#";
 
-const telegramLink = content.match(/https:\/\/t\.me\/[^"]+/);
+// Pehla external link nikalo jo blogger image ya blogger URL na ho
+const links = content.match(/https?:\/\/[^"]+/g);
 
-if (telegramLink) {
-    link = telegramLink[0];
+if (links) {
+    const external = links.find(url =>
+        !url.includes("blogger.googleusercontent.com") &&
+        !url.includes("teraasave.blogspot.com")
+    );
+
+    if (external) {
+        link = external;
+    }
 }
 
 const image = post.media$thumbnail
